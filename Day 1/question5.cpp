@@ -1,3 +1,4 @@
+// v) Write a program to find the smallest number divisible by all the numbers between 1 to 9.
 #include<iostream>
 using namespace std;
 int main(){
