@@ -42,17 +42,21 @@ class StringUtils{
 		return result;
 	}
 //	Returns true if the give string (pattern) found in the main string (str) otherwise false.
-	static bool hasPattern(string str,string pattern){
+	static bool hasPattern(string str,string ch){
+		int j=0;
 		for(int i=0;i<str.length();i++){
-			int flag=0;
-			for(int j=i,c=0;j<i+pattern.length();j++,c++){
-				if(pattern[c]==str[j])
-				flag++;
+			if(ch[j]==str[i])
+			{
+				j++;
 			}
-			if(flag == pattern.length())
-			return true;
+			else{
+				j=0;
+				
+			}
+			if(ch.length()==j) return true;
+			
 		}
-		return false;
+	 return false;
 	}
 //	 Returns true if all words of the given string (str) contains the 
 //	 given character (ch)  otherwise false.
@@ -118,11 +122,11 @@ int main(){
 	StringUtils su;
 //	cout<<su.countChar(input,'l');
 //	cout<<su.substring(input,1,3);
-	string *str = su.split(input,'l');
-	for(int i=0;i<=su.countChar(input,'l');i++) {
-		if(str[i]!="") cout<<str[i]<<" ";
-	}
-//	cout<<su.hasPattern(input,"lop");
+//	string *str = su.split(input,'l');
+//	for(int i=0;i<=su.countChar(input,'l');i++) {
+//		if(str[i]!="") cout<<str[i]<<" ";
+//	}
+	cout<<su.hasPattern(input,"abc");
 //	cout<<su.allWordsContainsChar(input,'l');
 //	cout<<su.reverse(input);
 // 	cout<<su.reverseVowels(input);
