@@ -1,37 +1,40 @@
 // ii) Write a program (without using inbuilt functions and not using Strings or array) to swap first and last digits of any number
+
 #include<iostream>
 using namespace std;
 int main(){
-	int n;
-	cin>>n;
-	int n1= n;
+	int num; //this is the number 
+	cin>>num;
+	int numcpy= num; //copying number into another variable
 	int rem=0,temp=0;
-	int c=0;
-	while(n){
-		rem = n%10;
+	int counter=0;
+	
+	//reversing the number and storing into temp variable//
+	while(num){
+		rem = num%10;
 		temp = (temp*10)+rem;
-		n = n/10;
-		c++;
+		num = num/10;
+		counter++;
 	}
 	
 	rem=0;
-	int temp2=0;
-	int f=0;
-	while(n1){
-		if(f==0 || f==c-1){
-			rem = n1%10;
-			temp2= temp2*10+rem;
+	int result=0;
+	int flag=0;
+	while(numcpy){
+		if(flag==0 || flag==counter-1){
+			rem = numcpy%10;
+			result= result*10+rem;
 		}
 		else{
 			rem = temp%10;
-			temp2 = temp2*10+rem; 
+			result = result*10+rem; 
 		}
-		n1= n1/10;
+		numcpy= numcpy/10;
 		temp = temp/10;
-		f++;
+		flag++;
 	}
 	
-	cout<<" number = "<<temp2;
+	cout<<" number = "<<result;
 	
 	
 }
