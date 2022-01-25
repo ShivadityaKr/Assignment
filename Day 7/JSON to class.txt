@@ -1,0 +1,42 @@
+Question 3: Convert the JSON into class
+
+{
+   "firstName":"John",
+   "lastName":"Smith",
+   "age":25,
+   "address":{
+      "streetAddress":"21 2nd Street",
+      "city":"New York",
+      "state":"NY",
+      "postalCode":10021
+   },
+   "phoneNumbers":[
+      {
+         "type":"home",
+         "number":"212 555-1234"
+      },
+      {
+         "type":"fax",
+         "number":"646 555-4567"
+      }
+   ]
+}
+//converted into class : 
+
+class Person{
+	string firstName;
+	string lastName;
+	int age;
+	Address address;
+	PhoneNumber phoneNumbers[];
+}
+class Address{
+	string streetAddress;
+	string city;
+	string state;
+	int postalCode;
+}
+class PhoneNumber{
+	string type;
+	int number;
+}
