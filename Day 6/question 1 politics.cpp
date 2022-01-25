@@ -16,11 +16,12 @@ class Aircraft : Vehicle{
 class MP{
 	protected:
 	string name;
-	string role;
+
 	int spend;
 	int spendLimit;
 	Car car;
 	public:
+	string role;
 		string getConstituency(){
 			return "Noida";
 		}
@@ -63,6 +64,9 @@ class Comissioner{
 		string canArrest(MP mp, PM pm){
 //			if(mp.details() == pm.details() && mp.exceedsSpendingLimit())
 //				return mp.details()+" arrested";
+			if(mp.role == "MP" && !mp.exceedsSpendingLimit())
+			return mp.details()+" arrested";
+			
 			if(pm.permission(mp) && mp.exceedsSpendingLimit())
 			return "spend is within limit";
 			else{
