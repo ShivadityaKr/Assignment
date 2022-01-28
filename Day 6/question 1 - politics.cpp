@@ -5,7 +5,11 @@ class Vehicle{
 		string build;
 };
 class Driver{
+	public:
 	string name;
+	Driver(){
+	
+	}
 };
 class CarDriver : Driver{
 	
@@ -15,16 +19,16 @@ class AirCraftDriver : Driver{
 };
 class Car : Vehicle{
 	public:
-	CarDriver driver;
+	
 };
 class Aircraft : Vehicle{
 	public:
-	AirCraftDriver driver;
+	
 };
 class MP{
 	protected:
 	string name;
-
+	CarDriver driver;
 	int spend;
 	int spendLimit;
 	Car car;
@@ -40,7 +44,7 @@ class MP{
 			this->spendLimit = spendLimit;
 		}
 		getDriver(){
-			car.driver;	
+			driver;	
 		}
 		bool exceedsSpendingLimit(){
 			if(spend<=spendLimit)
@@ -57,6 +61,7 @@ class MP{
 };
 class PM : protected MP{
 	Aircraft aircraft;
+	AirCraftDriver driver;
 	public:
 	bool permission(MP mp){
 		if(mp.exceedsSpendingLimit())

@@ -46,12 +46,12 @@ class Inverter{
 		string category;
 		bool status;
 		int powerRating;
-		int batteryStatus;
+		
 		Power p; 
-		Battery b;
+		
 		Inverter(){
 			powerRating = p.getPowerRating();
-			batteryStatus = b.getStatus();
+			
 		}	
 };
 class SolarPlate{			//solar plate
@@ -63,31 +63,35 @@ class Solar : protected Inverter{ 		//solar inveter
 	protected:
 		SolarPlate solarPlate;
 };
-class Grid : protected Solar{		//Grid on system  
-	protected:
+class Grid {		//Grid on system  
+	public:
 	int energyBackUp;
 };
 class GTI : protected Grid{			//GTI inverter
+	Grid grid;
 	public:
 	GTI(){
 	}
 };
-class Regalia : protected Grid{		//Regalia inverter
+class Regalia : protected Solar{		//Regalia inverter
 	public:
 	Regalia(){
 	}
 };
 class PCU : protected Solar{		//PCU inverter
+	Battery battery;
 	public:
 	PCU(){
 	}
 };
 class Zelio : protected Inverter{		//Zelio inverter
+	Battery battery;
 	public:
 	Zelio(){
 	}
 };
 class ICruze  : protected Inverter{		//iCruze inverter
+	Battery battery;
 	public:
 	ICruze(){
 	}
